@@ -1,0 +1,486 @@
+{
+"updated_at":"2022-11-05T04:55:07.414392977Z"
+"items":[
+0:{
+"name":"eth-mainnet"
+"chain_id":"1"
+"is_testnet":false
+"db_schema_name":"chain_eth_mainnet"
+"label":"Ethereum Mainnet"
+"category_label":"Ethereum"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/ethereum-eth-logo.png"
+"is_appchain":false
+}
+1:{
+"name":"eth-goerli"
+"chain_id":"5"
+"is_testnet":true
+"db_schema_name":"chain_eth_goerli"
+"label":"Ethereum Goerli Testnet"
+"category_label":"Ethereum"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/ethereum-eth-logo.png"
+"is_appchain":false
+}
+2:{
+"name":"matic-mainnet"
+"chain_id":"137"
+"is_testnet":false
+"db_schema_name":"chain_matic_mainnet"
+"label":"Matic Mainnet"
+"category_label":"Matic"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/polygon-matic-logo.png"
+"is_appchain":false
+}
+3:{
+"name":"matic-mumbai"
+"chain_id":"80001"
+"is_testnet":true
+"db_schema_name":"chain_matic_mumbai"
+"label":"Matic Testnet Mumbai"
+"category_label":"Matic"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/polygon-matic-logo.png"
+"is_appchain":false
+}
+4:{
+"name":"avalanche-mainnet"
+"chain_id":"43114"
+"is_testnet":false
+"db_schema_name":"chain_avalanche_mainnet"
+"label":"Avalanche C-Chain Mainnet"
+"category_label":"Avalanche"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/avalanche-avax-logo.png"
+"is_appchain":false
+}
+5:{
+"name":"avalanche-testnet"
+"chain_id":"43113"
+"is_testnet":true
+"db_schema_name":"chain_avalanche_testnet"
+"label":"Avalanche Fuji Testnet"
+"category_label":"Avalanche"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/avalanche-avax-logo.png"
+"is_appchain":false
+}
+6:{
+"name":"bsc-mainnet"
+"chain_id":"56"
+"is_testnet":false
+"db_schema_name":"chain_bsc_mainnet"
+"label":"Binance Smart Chain"
+"category_label":"Binanace Smart Chain"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/binance-coin-bnb-logo.png"
+"is_appchain":false
+}
+7:{
+"name":"bsc-testnet"
+"chain_id":"97"
+"is_testnet":true
+"db_schema_name":"chain_bsc_testnet"
+"label":"Binance Smart Chain Testnet"
+"category_label":"Binanace Smart Chain"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/binance-coin-bnb-logo.png"
+"is_appchain":false
+}
+8:{
+"name":"moonbeam-mainnet"
+"chain_id":"1284"
+"is_testnet":false
+"db_schema_name":"chain_moonbeam_mainnet"
+"label":"Moonbeam Mainnet"
+"category_label":"Moonbeam"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/moonbeam-logo.png"
+"is_appchain":false
+}
+9:{
+"name":"moonbeam-moonbase-alpha"
+"chain_id":"1287"
+"is_testnet":true
+"db_schema_name":"chain_moonbeam_moonbase_alpha"
+"label":"Moonbeam Moonbase Alpha"
+"category_label":"Moonbeam"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/moonbeam-logo.png"
+"is_appchain":false
+}
+10:{
+"name":"moonbeam-moonriver"
+"chain_id":"1285"
+"is_testnet":false
+"db_schema_name":"chain_moonbeam_moonriver"
+"label":"Moonbeam Moonriver"
+"category_label":"Moonbeam"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/moonriver.png"
+"is_appchain":false
+}
+11:{
+"name":"rsk-mainnet"
+"chain_id":"30"
+"is_testnet":false
+"db_schema_name":"chain_rsk_mainnet"
+"label":"RSK Mainnet"
+"category_label":"RSK"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/rsk-mainnet-logo.svg"
+"is_appchain":false
+}
+12:{
+"name":"rsk-testnet"
+"chain_id":"31"
+"is_testnet":true
+"db_schema_name":"chain_rsk_testnet"
+"label":"RSK Testnet"
+"category_label":"RSK"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/rsk-mainnet-logo.svg"
+"is_appchain":false
+}
+13:{
+"name":"arbitrum-mainnet"
+"chain_id":"42161"
+"is_testnet":false
+"db_schema_name":"chain_arbitrum_mainnet"
+"label":"Arbitrum Mainnet"
+"category_label":"Arbitrum"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/arbitrum-mainnet-logo.svg"
+"is_appchain":false
+}
+14:{
+"name":"arbitrum-testnet"
+"chain_id":"421611"
+"is_testnet":true
+"db_schema_name":"chain_arbitrum_testnet"
+"label":"Arbitrum Testnet"
+"category_label":"Arbitrum"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/arbitrum-mainnet-logo.svg"
+"is_appchain":false
+}
+15:{
+"name":"fantom-mainnet"
+"chain_id":"250"
+"is_testnet":false
+"db_schema_name":"chain_fantom_mainnet"
+"label":"Fantom Opera"
+"category_label":"Fantom"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/fantom-ftm-logo.png"
+"is_appchain":false
+}
+16:{
+"name":"fantom-testnet"
+"chain_id":"4002"
+"is_testnet":true
+"db_schema_name":"chain_fantom_testnet"
+"label":"Fantom Testnet"
+"category_label":"Fantom"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/fantom-ftm-logo.png"
+"is_appchain":false
+}
+17:{
+"name":"palm-mainnet"
+"chain_id":"11297108109"
+"is_testnet":false
+"db_schema_name":"chain_palm_mainnet"
+"label":"Palm Mainnet"
+"category_label":"Palm"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/palm-mainnet-logo.svg"
+"is_appchain":false
+}
+18:{
+"name":"palm-testnet"
+"chain_id":"11297108099"
+"is_testnet":true
+"db_schema_name":"chain_palm_testnet"
+"label":"Palm Testnet"
+"category_label":"Palm"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/palm-mainnet-logo.svg"
+"is_appchain":false
+}
+19:{
+"name":"klaytn-mainnet"
+"chain_id":"8217"
+"is_testnet":false
+"db_schema_name":"chain_klaytn_mainnet"
+"label":"Klaytn Mainnet"
+"category_label":"Klaytn"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/klaytn-mainnet-logo.svg"
+"is_appchain":false
+}
+20:{
+"name":"heco-mainnet"
+"chain_id":"128"
+"is_testnet":false
+"db_schema_name":"chain_heco_mainnet"
+"label":"HECO Mainnet"
+"category_label":"HECO"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/heco-mainnet-logo.svg"
+"is_appchain":false
+}
+21:{
+"name":"heco-testnet"
+"chain_id":"256"
+"is_testnet":true
+"db_schema_name":"chain_heco_testnet"
+"label":"HECO Testnet"
+"category_label":"HECO"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/heco-testnet-logo.svg"
+"is_appchain":false
+}
+22:{
+"name":"nervos-polyjuice-testnet"
+"chain_id":"71393"
+"is_testnet":true
+"db_schema_name":"chain_nervos_polyjuice_testnet"
+"label":"Nervos Polyjuice Testnet"
+"category_label":"Nervos"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/nervos-polyjuice-testnet-logo.svg"
+"is_appchain":false
+}
+23:{
+"name":"nervos-godwoken-mainnet"
+"chain_id":"71402"
+"is_testnet":false
+"db_schema_name":"chain_nervos_godwoken_mainnet"
+"label":"Nervos Godwoken Mainnet"
+"category_label":"Nervos"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/nervos-godwoken-logo.svg"
+"is_appchain":false
+}
+24:{
+"name":"nervos-godwoken-testnet"
+"chain_id":"71401"
+"is_testnet":true
+"db_schema_name":"chain_nervos_godwoken_testnet"
+"label":"Nervos Godwoken Testnet"
+"category_label":"Nervos"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/nervos-godwoken-logo.svg"
+"is_appchain":false
+}
+25:{
+"name":"axie-mainnet"
+"chain_id":"2020"
+"is_testnet":false
+"db_schema_name":"chain_axie_mainnet"
+"label":"Axie Mainnet"
+"category_label":"Axie"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/axie-logo.svg"
+"is_appchain":false
+}
+26:{
+"name":"evmos-mainnet"
+"chain_id":"9001"
+"is_testnet":false
+"db_schema_name":"chain_evmos_mainnet"
+"label":"EVMOS Mainnet"
+"category_label":"EVMOS"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/evmos-logo.svg"
+"is_appchain":false
+}
+27:{
+"name":"evmos-testnet"
+"chain_id":"9000"
+"is_testnet":true
+"db_schema_name":"chain_evmos_testnet"
+"label":"EVMOS Testnet"
+"category_label":"EVMOS"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/evmos-logo.svg"
+"is_appchain":false
+}
+28:{
+"name":"astar-mainnet"
+"chain_id":"592"
+"is_testnet":false
+"db_schema_name":"chain_astar_mainnet"
+"label":"Astar Mainnet"
+"category_label":"Astar"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/astar-mainnet-logo.svg"
+"is_appchain":false
+}
+29:{
+"name":"astar-shiden"
+"chain_id":"336"
+"is_testnet":false
+"db_schema_name":"chain_astar_shiden"
+"label":"Astar Shiden"
+"category_label":"Astar"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/astar-shiden-logo.svg"
+"is_appchain":false
+}
+30:{
+"name":"iotex-mainnet"
+"chain_id":"4689"
+"is_testnet":false
+"db_schema_name":"chain_iotex_mainnet"
+"label":"IoTeX Mainnet"
+"category_label":"IoTeX"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/iotex-logo.svg"
+"is_appchain":false
+}
+31:{
+"name":"iotex-testnet"
+"chain_id":"4690"
+"is_testnet":true
+"db_schema_name":"chain_iotex_testnet"
+"label":"IoTeX Testnet"
+"category_label":"IoTeX"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/iotex-logo.svg"
+"is_appchain":false
+}
+32:{
+"name":"harmony-mainnet"
+"chain_id":"1666600000"
+"is_testnet":false
+"db_schema_name":"chain_harmony_mainnet"
+"label":"Harmony Mainnet"
+"category_label":"Harmony"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/harmony-logo.svg"
+"is_appchain":false
+}
+33:{
+"name":"harmony-testnet"
+"chain_id":"1666700000"
+"is_testnet":true
+"db_schema_name":"chain_harmony_testnet"
+"label":"Harmony Testnet"
+"category_label":"Harmony"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/harmony-logo.svg"
+"is_appchain":false
+}
+34:{
+"name":"cronos-mainnet"
+"chain_id":"25"
+"is_testnet":false
+"db_schema_name":"chain_cronos_mainnet"
+"label":"Cronos Mainnet"
+"category_label":"Cronos"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/cronos-mainnet-logo.svg"
+"is_appchain":false
+}
+35:{
+"name":"aurora-mainnet"
+"chain_id":"1313161554"
+"is_testnet":false
+"db_schema_name":"chain_aurora_mainnet"
+"label":"Aurora Mainnet"
+"category_label":"Aurora"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/aurora-logo.svg"
+"is_appchain":false
+}
+36:{
+"name":"aurora-testnet"
+"chain_id":"1313161555"
+"is_testnet":true
+"db_schema_name":"chain_aurora_testnet"
+"label":"Aurora Testnet"
+"category_label":"Aurora"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/aurora-logo.svg"
+"is_appchain":false
+}
+37:{
+"name":"defi-kingdoms-mainnet"
+"chain_id":"53935"
+"is_testnet":false
+"db_schema_name":"chain_defi_kingdoms_mainnet"
+"label":"DeFi Kingdoms Mainnet"
+"category_label":"Avalanche"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/defi-kingdoms.svg"
+"is_appchain":true
+}
+38:{
+"name":"swimmer-mainnet"
+"chain_id":"73772"
+"is_testnet":false
+"db_schema_name":"chain_swimmer_mainnet"
+"label":"Swimmer Mainnet"
+"category_label":"Avalanche"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/swimmer.svg"
+"is_appchain":true
+}
+39:{
+"name":"boba-mainnet"
+"chain_id":"288"
+"is_testnet":false
+"db_schema_name":"chain_boba_mainnet"
+"label":"Boba Mainnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-ethereum-logo.svg"
+"is_appchain":false
+}
+40:{
+"name":"boba-avalanche-mainnet"
+"chain_id":"43288"
+"is_testnet":false
+"db_schema_name":"chain_boba_avalanche_mainnet"
+"label":"Boba Avalanche Mainnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-avax-logo.svg"
+"is_appchain":false
+}
+41:{
+"name":"boba-bobabeam-mainnet"
+"chain_id":"1294"
+"is_testnet":false
+"db_schema_name":"chain_boba_bobabeam_mainnet"
+"label":"Boba Bobabeam Mainnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-moonbeam-logo.svg"
+"is_appchain":false
+}
+42:{
+"name":"boba-avalanche-testnet"
+"chain_id":"4328"
+"is_testnet":true
+"db_schema_name":"chain_boba_avalanche_testnet"
+"label":"Boba Avalanche Testnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-avax-logo.svg"
+"is_appchain":false
+}
+43:{
+"name":"boba-rinkeby-testnet"
+"chain_id":"28"
+"is_testnet":true
+"db_schema_name":"chain_boba_rinkeby_testnet"
+"label":"Boba Rinkeby Testnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-ethereum-logo.svg"
+"is_appchain":false
+}
+44:{
+"name":"boba-bobabase-testnet"
+"chain_id":"1297"
+"is_testnet":true
+"db_schema_name":"chain_boba_bobabase_testnet"
+"label":"Boba Bobabase Testnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-moonbeam-logo.svg"
+"is_appchain":false
+}
+45:{
+"name":"boba-bnb-mainnet"
+"chain_id":"56288"
+"is_testnet":false
+"db_schema_name":"chain_boba_bnb_mainnet"
+"label":"Boba BNB Mainnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-bnb-logo.svg"
+"is_appchain":false
+}
+46:{
+"name":"boba-bnb-testnet"
+"chain_id":"9728"
+"is_testnet":true
+"db_schema_name":"chain_boba_bnb_testnet"
+"label":"Boba BNB Testnet"
+"category_label":"Boba"
+"logo_url":"https://www.covalenthq.com/static/images/icons/display-icons/boba-bnb-logo.svg"
+"is_appchain":false
+}
+47:{
+"name":"covalent-internal-network-v1"
+"chain_id":"1131378225"
+"is_testnet":false
+"db_schema_name":"chain_covint1"
+"label":"Covalent Internal V1"
+"category_label":"Covalent"
+"logo_url":"https://www.covalenthq.com/static/images/covalent-logomark.png"
+"is_appchain":false
+}
+]
+"pagination":NULL
+}
