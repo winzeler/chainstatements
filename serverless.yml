@@ -1,0 +1,201 @@
+service: chainstatements-service
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-add-api-key
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  serverless-offline:
+    noPrependStageInUrl: true
+    apiKey: "localKey"
+  apiKeys:
+    dev:
+      - name: dev-chainstatements-api-key
+        value: ${ssm:/env/dev/ChainStatementsApiKey}
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  versionFunctions: false
+  stage: dev
+  environment:
+    REGION: us-east-1
+    MONGODB_URI: ${ssm:/env/dev/MongodbURI}
+    MEMORY_SIZE: 2048
+    CHAINSTATEMENTS_SQS_URL: ${ssm:/env/dev/ChainStatementsSqsUrl} 
+    CHAINSTATEMENTS_SQS_ARN: ${ssm:/env/dev/ChainStatementsSqsArn}
+    COVALENT_BASE_URL: ${ssm:/env/dev/CovalentBaseUrl} 
+    COVALENT_PRICE_URL: ${ssm:/env/dev/CovalentBaseUrl}
+    COVALENT_API_KEY: ${ssm:/env/dev/CovalentApiKey}
+    EMAIL_KEY: ${ssm:/env/dev/SocketLabsKey}
+    EMAIL_SERVER_ID: ${ssm:/env/dev/SocketLabsId}
+    DEV_CHAINSTATEMENTS_API_KEY: ${ssm:/env/dev/ChainStatementsApiKey}
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource: "*"
+    - Effect: Allow
+      Action:
+        - sqs:*
+      Resource: "*"
+#  vpc: ${file(serverless-vpc.yml):${opt:stage, self:provider.stage}}
+
+  vpc:
+    subnetIds:
+    #  - subnet-0cdc57fab8a350004
+    #  - subnet-0036302c812b33014
+    #  - subnet-01794c18022a1a854
+      - subnet-083e0a39cf675d36f
+      - subnet-055f93dcdc3983464
+      - subnet-09058d4e414abeb00
+    securityGroupIds:
+      - sg-04a5f22855b2f3c0f
+
+
+functions:
+#  graphql:
+#    handler: src/handler.graphqlHandler
+#    timeout: 300
+#    events:
+#      - http:
+#          path: /
+#          method: POST
+#          cors: true
+#          private: true
+
+
+
+  ChainStatementsSqsHandler:
+    handler: src/handler.ChainStatementsSqsHandler
+    #reservedConcurrency: 100
+    events:
+      - sqs:
+          arn: ${file(serverless-env.yml):${self:provider.stage}.CHAINSTATEMENTS_SQS_ARN}
+          batchSize: 1
+    timeout: 900
+    memorySize: ${file(serverless-env.yml):${self:provider.stage}.MEMORY_SIZE}
+
+# TODO: interal lambda only
+#  ResendAllStatements:
+#    handler: src/handler.ResendAllStatements
+#    timeout: 900
+
+#  QuickNodeWebhook:
+#    handler: src/handler.quicknodeWebhook
+#    timeout: 60
+#    events:
+#      - http:
+#          path: /quicknode-webhook
+#          method: POST
+
+  # REST ENDPOINT to add address, adds to db and sqs
+  AddAddress:
+    handler: src/handler.addAddress
+    timeout: 30
+    events:
+      - http:
+          path: /add
+          method: POST
+          private: true
+          request:
+            schemas:
+              application/json: ${file(src/validators/addAddress.json)}
+          cors: true
+
+  # REST ENDPOINT to remove address, remove from db
+  RemoveAddress:
+    handler: src/handler.removeAddress
+    timeout: 30
+    events:
+      - http:
+          path: /remove
+          method: POST
+          private: true
+          request:
+            schemas:
+              application/json: ${file(src/validators/removeAddress.json)}
+          cors: true
+
+  # REST ENDPOINT to check address status, check status from db
+  CheckAddress:
+    handler: src/handler.checkAddress
+    timeout: 30
+    events:
+      - http:
+          path: /check
+          method: POST
+          private: true
+          request:
+            schemas:
+              application/json: ${file(src/validators/checkAddress.json)}
+          cors: true
+
+
+  # sends message to SQS queue to generate monthly statement; 15min timeout; sends at 12:05am UTC monthly
+  CronMonthlyStatementService:
+    handler: src/handler.CronMonthlyStatementService
+    #reservedConcurrency: 5
+    timeout: 900
+    events:
+      - schedule: cron(3 0 1 * ? *)
+
+  # sends message to SQS queue to generate daily statement; 15 min timeout; sends at  12:15am UTC daily
+  CronDailyStatementService:
+    handler: src/handler.CronDailyStatementService
+    #reservedConcurrency: 5
+    timeout: 900
+    events:
+      - schedule: cron(5 0 * * ? *)
+
+ # sends message to SQS queue to generate annual statement, 15 minute timeout; sends a 1am UTC on 1st day of 1st month
+  CronAnnualStatementService:
+    handler: src/handler.CronAnnualStatementService
+    #reservedConcurrency: 5
+    timeout: 900
+    events:
+      - schedule: cron(0 1 1 * ? *)
+
+
+# TODO: GET endpoint to check status of statement, transaction receipt, or address subscription
+#  checkStatus:
+#    handler: src/handler.checkStatus
+#    timeout: 600
+#    events:
+#      - http:
+#          path: check-status/{url}
+#          method: GET
+#          cors: true
+
+
+resources:
+  Resources:
+    GatewayResponse401:
+      Type: "AWS::ApiGateway::GatewayResponse"
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Credentials: "'true'"
+        ResponseType: UNAUTHORIZED
+        RestApiId:
+          Ref: "ApiGatewayRestApi"
+        StatusCode: "401"
+
+    GatewayResponse403:
+      Type: "AWS::ApiGateway::GatewayResponse"
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Credentials: "'true'"
+        ResponseType: ACCESS_DENIED
+        RestApiId:
+          Ref: "ApiGatewayRestApi"
+        StatusCode: "403"

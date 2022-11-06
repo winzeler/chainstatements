@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Add Address",
+    "description": "Add Address REST request",
+    "type": "object",
+    "properties": {
+      "address": {
+        "description": "blockchain address",
+        "type": "string"
+      },
+      "email": {
+        "description": "email",
+        "type": "string"
+      },
+      "chain": {
+        "description": "chain",
+        "type": "string"
+      },
+      "chain_id": {
+        "description": "chain id from colavent",
+        "type": "number"
+      },
+      "name": {
+        "description": "optional name",
+        "type": "string"
+      },
+      "push": {
+        "description": "push protocal true or false",
+        "type": "boolean"
+      },
+      "xmtp": {
+        "description": "xmtp true or false",
+        "type": "boolean"
+      },
+      "disabled": {
+        "description": "disabled true or false",
+        "type": "boolean"
+      }
+    },
+    "required": ["address", "chain", "chain_id"],
+    "additionalProperties": false
+  }
+  

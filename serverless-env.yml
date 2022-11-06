@@ -1,0 +1,35 @@
+local:
+  stage: "local"
+  REGION: "us-east-1"
+  # AWS_PROFILE: 
+  SENTRY_ENVIRONMENT: local
+
+  MEMORY_SIZE: 1024
+
+  CHAINSTATEMENTS_SQS_URL: ""
+  CHAINSTATEMENTS_SQS_ARN: ""
+
+dev:
+  REGION: us-east-1
+  MONGODB_URI: ${ssm:/env/dev/MongodbURI}
+  MEMORY_SIZE: 2048
+  CHAINSTATEMENTS_SQS_URL: ${ssm:/env/dev/ChainStatementsSqsUrl} 
+  CHAINSTATEMENTS_SQS_ARN: ${ssm:/env/dev/ChainStatementsSqsArn}
+  COVALENT_BASE_URL: ${ssm:/env/dev/CovalentBaseUrl} 
+  COVALENT_PRICE_URL: ${ssm:/env/dev/CovalentBaseUrl}
+  COVALENT_API_KEY: ${ssm:/env/dev/CovalentApiKey}
+  EMAIL_KEY: ${ssm:/env/dev/SocketLabsKey}
+  EMAIL_SERVER_ID: ${ssm:/env/dev/SocketLabsId}
+
+prod:
+  REGION: "us-east-1"
+  MONGODB_URI: ${ssm:/env/prod/MongodbURI}  
+  MEMORY_SIZE: "2048"
+  CHAINSTATEMENTS_SQS_URL: ${ssm:/env/prod/ChainStatementsSqsUrl}
+  CHAINSTATEMENTS_SQS_ARN: ${ssm:/env/prod/ChainStatementsSqsArn}
+  COVALENT_BASE_URL: ${ssm:/env/prod/CovalentBaseUrl}
+  COVALENT_PRICE_URL: ${ssm:/env/prod/CovalentBaseUrl}
+  COVALENT_API_KEY: ${ssm:/env/prod/CovalentApiKey}
+  EMAIL_KEY: ${ssm:/env/prod/SocketLabsKey}
+  EMAIL_SERVER_ID: ${ssm:/env/prod/SocketLabsId}
+

@@ -1,0 +1,11 @@
+local: undefined
+
+dev: 
+  securityGroupIds:
+    - ${ssm:/vpc/sg/dev/application}
+  subnetIds: { 'Fn::Split': [ ",", "${ssm:/vpc/sn/dev/application}" ] }
+
+prod: 
+  securityGroupIds:
+    - ${ssm:/vpc/sg/prod/application}
+  subnetIds: { 'Fn::Split': [ ",", "${ssm:/vpc/sn/prod/application}" ] }
